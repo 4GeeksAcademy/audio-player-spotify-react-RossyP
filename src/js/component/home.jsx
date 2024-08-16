@@ -67,7 +67,15 @@ const Home = () => {
 
 
 	function buttonForward(){
-
+		allSongs.forEach((item, index) => {
+			if(id === item.id){
+				if(id <= allSongs.length){
+					reproductorAudio.current.src = "https://playground.4geeks.com" + allSongs[index+1].url
+					reproductorAudio.current.play()
+					setId(allSongs[index+1].id)
+				}
+			}
+		})
 	}
 
 	function obtenerId(id){
