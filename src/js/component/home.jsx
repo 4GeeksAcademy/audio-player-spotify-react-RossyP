@@ -55,7 +55,7 @@ const Home = () => {
 	function buttonBack(){
 		allSongs.forEach((item, index) => {
 			if(id === item.id){
-				if(id > 0){
+				if(index > 0){
 					reproductorAudio.current.src = "https://playground.4geeks.com" + allSongs[index-1].url
 					console.log(reproductorAudio.current)
 					reproductorAudio.current.play()
@@ -69,7 +69,7 @@ const Home = () => {
 	function buttonForward(){
 		allSongs.forEach((item, index) => {
 			if(id === item.id){
-				if(id <= allSongs.length){
+				if(index+1 < allSongs.length){
 					reproductorAudio.current.src = "https://playground.4geeks.com" + allSongs[index+1].url
 					reproductorAudio.current.play()
 					setId(allSongs[index+1].id)
