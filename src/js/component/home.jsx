@@ -90,17 +90,17 @@ const Home = () => {
 
 	return (
 		<div className="text-center">
-			<ol>
+			<ul className="text-start w-25" style={{listStyle: "none"}}>
 			{
 				allSongs.map((item, index) => {
 					return(
-							<div key={item.id} onClick={()=>{obtenerUrl(item.url), obtenerId(item.id)}}>
-								<li>{item.name}</li>
+							<div key={item.id} onClick={()=>{obtenerUrl(item.url), obtenerId(item.id)}} className="bg-warning border">
+								<li><span className="fw-bold">{item.id}. </span>{item.name}</li>
 							</div>
 					)
 				})
 			}
-			</ol>
+			</ul>
 			<div>
 				<div>
 					<audio  ref={reproductorAudio}></audio>
