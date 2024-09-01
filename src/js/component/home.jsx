@@ -90,30 +90,30 @@ const Home = () => {
 
 	return (
 		<div className="d-flex flex-column justify-content-center align-items-center" style={{height: "100vh"}}>
-			<div  className="w-50 bg-primary d-flex flex-column justify-content-center align-items-center">
-				<ul className="text-start p-0 m-0"  style={{listStyle: "none", width:"350px", backgroundColor: "pink", maxHeight:"460px", overflow:"auto"}}>
+			<div  className="d-flex flex-column justify-content-center align-items-center p-2 rounded" style={{width:"20%", minWidth:"300px", backgroundColor:"black"}}>
+				<ul className="text-start p-0 m-0"  style={{listStyle: "none", width:"100%", backgroundColor: "pink", maxHeight:"460px", overflow:"auto"}}>
 				{
 					allSongs.map((item, index) => {
 						return(
-								<div key={item.id} onClick={()=>{obtenerUrl(item.url), obtenerId(item.id)}} className="bg-warning border p-2">
+								<div key={item.id} onClick={()=>{obtenerUrl(item.url), obtenerId(item.id)}} className="song-individual border p-2" style={{backgroundColor:"white"}}>
 									<li><span className="fw-bold ps-3">{item.id}. </span>{item.name}</li>
 								</div>
 						)
 					})
 				}
 				</ul>
-				<div className="bg-danger d-flex justify-content-center align-items-center" style={{width:"350px", height:"60px"}}>
+				<div className="bg-black d-flex justify-content-center align-items-center" style={{width:"100%", height:"80px"}}>
 					<div>
 						<audio  ref={reproductorAudio}></audio>
 					</div>
 					<div>
-						<button className="rounded-circle fs-5 py-1 px-2" onClick={buttonBack}>
+						<button className="rounded-circle fs-5 pt-2 px-2 " onClick={buttonBack}>
 							<FontAwesomeIcon icon={faBackward} />
 						</button>
-						<button className="rounded-circle fs-5 py-1 px-2" onClick={buttonStatus}>
+						<button className="rounded-circle fs-5 pt-2 px-2" onClick={buttonStatus}>
 							{buttonPlay ? <FontAwesomeIcon icon={faCirclePlay} /> : <FontAwesomeIcon icon={faPause} />}
 						</button>
-						<button className="rounded-circle fs-5 py-1 px-2" onClick={buttonForward}>
+						<button className="rounded-circle fs-5 pt-2 px-2" onClick={buttonForward}>
 							<FontAwesomeIcon icon={faForward} />
 						</button>
 					</div>
