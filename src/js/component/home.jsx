@@ -89,35 +89,38 @@ const Home = () => {
 	},[])
 
 	return (
-		<div className="text-center">
-			<ul className="text-start w-25" style={{listStyle: "none"}}>
-			{
-				allSongs.map((item, index) => {
-					return(
-							<div key={item.id} onClick={()=>{obtenerUrl(item.url), obtenerId(item.id)}} className="bg-warning border">
-								<li><span className="fw-bold">{item.id}. </span>{item.name}</li>
-							</div>
-					)
-				})
-			}
-			</ul>
-			<div>
-				<div>
-					<audio  ref={reproductorAudio}></audio>
+		<div className="d-flex flex-column justify-content-center align-items-center" style={{height: "100vh"}}>
+			<div  className="w-50 bg-primary d-flex flex-column justify-content-center align-items-center">
+				<ul className="text-start p-0 m-0"  style={{listStyle: "none", width:"350px", backgroundColor: "pink", maxHeight:"460px", overflow:"auto"}}>
+				{
+					allSongs.map((item, index) => {
+						return(
+								<div key={item.id} onClick={()=>{obtenerUrl(item.url), obtenerId(item.id)}} className="bg-warning border p-2">
+									<li><span className="fw-bold ps-3">{item.id}. </span>{item.name}</li>
+								</div>
+						)
+					})
+				}
+				</ul>
+				<div className="bg-danger d-flex justify-content-center align-items-center" style={{width:"350px", height:"60px"}}>
+					<div>
+						<audio  ref={reproductorAudio}></audio>
+					</div>
+					<div>
+						<button className="rounded-circle fs-5 py-1 px-2" onClick={buttonBack}>
+							<FontAwesomeIcon icon={faBackward} />
+						</button>
+						<button className="rounded-circle fs-5 py-1 px-2" onClick={buttonStatus}>
+							{buttonPlay ? <FontAwesomeIcon icon={faCirclePlay} /> : <FontAwesomeIcon icon={faPause} />}
+						</button>
+						<button className="rounded-circle fs-5 py-1 px-2" onClick={buttonForward}>
+							<FontAwesomeIcon icon={faForward} />
+						</button>
+					</div>
+					
 				</div>
-				<div>
-					<button onClick={buttonBack}>
-						<FontAwesomeIcon icon={faBackward} />
-					</button>
-					<button onClick={buttonStatus}>
-						{buttonPlay ? <FontAwesomeIcon icon={faCirclePlay} /> : <FontAwesomeIcon icon={faPause} />}
-					</button>
-					<button onClick={buttonForward}>
-						<FontAwesomeIcon icon={faForward} />
-					</button>
-				</div>
-				
 			</div>
+
 		</div>
 	);
 };

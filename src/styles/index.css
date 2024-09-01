@@ -1,4 +1,11 @@
-
+body{
+    /* background-image: url("https://besthqwallpapers.com/Uploads/7-12-2019/114874/thumb2-black-and-purple-abstraction-pink-lines-background-retro-pink-background-creative-backgrounds.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+    background: rgb(175,64,112);
+    background: radial-gradient(circle, rgba(175,64,112,1) 5%, rgba(0,0,0,1) 100%);
+}   
 /* 
 
     You can write your own styles here...
