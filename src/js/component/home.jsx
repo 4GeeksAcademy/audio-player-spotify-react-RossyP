@@ -106,14 +106,14 @@ const Home = () => {
 					<div>
 						<audio  ref={reproductorAudio}></audio>
 					</div>
-					<div>
-						<button className="rounded-circle fs-5 pt-2 px-2 " onClick={buttonBack}>
+					<div className="d-flex justify-content-center align-items-center gap-2 p-0 m-0">
+						<button className="rounded-circle fs-3 pt-2 pe-2 " style={{width:"50px", height:"50px"}} onClick={buttonBack}>
 							<FontAwesomeIcon icon={faBackward} />
 						</button>
-						<button className="rounded-circle fs-5 pt-2 px-2" onClick={buttonStatus}>
+						<button className="rounded-circle fs-3 pt-2 px-2" style={{width:"50px", height:"50px"}} onClick={buttonStatus}>
 							{buttonPlay ? <FontAwesomeIcon icon={faCirclePlay} /> : <FontAwesomeIcon icon={faPause} />}
 						</button>
-						<button className="rounded-circle fs-5 pt-2 px-2" onClick={buttonForward}>
+						<button className="rounded-circle fs-3 pt-2 px-2" style={{width:"50px", height:"50px"}} onClick={buttonForward}>
 							<FontAwesomeIcon icon={faForward} />
 						</button>
 					</div>
